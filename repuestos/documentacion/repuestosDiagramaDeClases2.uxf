@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>336</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Cliente</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>328</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Producto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>336</y>
+      <w>288</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Pedido
+--
+-id:int {autonumérico}
+-fechaHora:date
+--
++obtFechaHora():date
++estFechaHora(d:date):void
++obtProductos():DetalleProducto[*]
++obtHistorico():HistoricoEstadoPedido[*]
++actualizarEstadoPedido(h:HistoricoEstadoPedido):void
++obtEstadoActual():EstadoPedido
++obtCliente():Cliente
++estCliente(c:Cliente):void
++obtFormaDePago():FormaDePago
++estFormaDePago(fdp:FormaDePago):void
++obtAcceso():Acceso
++estAcceso(a:acceso):void
++agregarProducto(p: Producto):void
++agregarProducto(p: Producto, cantidad:int):void
++quitarProducto(p: Producto):void
++quitarProducto(p: Producto, cantidad:int):void
++obtTotal():double
++obtId():int
++estId(id:int):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>424</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Mayorista</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>424</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Minorista</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>336</y>
+      <w>168</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>352</y>
+      <w>72</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>352</y>
+      <w>72</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>304</y>
+      <w>216</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>DetallePedido
+--
+-id:int {autonumérico}
+-cantidad:int
+-nrosDeSerie:string[*]
+--
++obtId():int
++obtCantidad():int
++obtNrosDeSerie():String[*]
++obtProducto():Producto
++obtPedido():Pedido
++estId(id:int):void
++estCantidad(cantidad:int):void
++estNrosDeSerie(nds:String[*]):void
++estProducto(p:Producto):void
++estPedido(p:Pedido):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>336</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>328</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>160</y>
+      <w>176</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>FormaDePago
+--
+-nombre:string
+-tasa:int
+-plazo:int
+--
++estNombre(nombre:string):void
++estTasa(tasa:int):void
++estPlazo(plazo:int):void
++obtNombre():string
++obtTasa():int
++obtPlazo():int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>216</y>
+      <w>64</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+m2=*</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>216</y>
+      <w>64</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>60.0;150.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>712</y>
+      <w>352</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Devolución
+--
+-id:int {autonumérico}
+--
++obtId():int
++obtPedido():Pedido
++agregarProducto(p: Producto, cantidad:int: nrosDeSerie:string[0])
++estId(id:int):void
++estPedido(p:Pedido):void
++quitarProducto(p: Producto)
++obtProductos():DetalleDevolucion</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>608</y>
+      <w>224</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>DetalleDevolución
+--
+-id:int {autonumérico}
+-cantidad:int
+-nrosDeSerie:string[*]
+-motivoDevolucion:string
+--
++obtId():int
++obtCantidad():int
++obtMotivoDevolucion():string
++obtNrosDeSerie():String[*]
++obtProducto():Producto
++obtDevolución():Devolución
++estId(id:int):void
++estCantidad(cantidad:int):void
++estNrosDeSerie(nds:String[*]):void
++estProducto(p:Producto):void
++estDevolucion(p:Devolucion):void
++estMotivoDevolucion(motivo:string):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>720</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>344</y>
+      <w>152</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;350.0;170.0;350.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>632</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>120</y>
+      <w>216</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>EstadoPedido
+--
+-id:int {autonumérico}
+-nombre:string
+-descripcion:string
+--
++obtId():int
++obtNombre():string
++obtDescripcion():string
++estId(id:int):void
++estNombre(nombre:string):void
++estDescripcion(descripcion:string):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>144</y>
+      <w>224</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>HistoricoEstadoPedido
+--
+-fechaHora:date
+--
++obtFecha():date
++obtEstado():EstadoPedido
++estFecha(fechaHora:date):void
++estEstadoPedido(ep:EstadoPedido):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>176</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>240</y>
+      <w>104</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;60.0;110.0;60.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>104</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Acceso</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>104</y>
+      <w>136</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>112</x>
+      <y>104</y>
+      <w>136</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;290.0;10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>40</y>
+      <w>260</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/Cliente/
+--
+-id:int
+-nroDoc:string
+-tipoDoc:string
+-nombre:string
+-direccion:string
+-telefono:string
+-password:string
+--
++obtId():int
++obtNroDoc():string
++obtTipoDoc():string
++obtNombre():string
++obtDireccion():string
++obtTelefono():string
++obtPassword():string
++estId(id:int):void
++estNombre(nombre:string):void
++estTipoDoc(tipoDoc:string):void
++estNroDoc(nroDoc:string):void
++estDireccion(direccion:string):void
++estTelefono(telefono:string):void
++estPassword(password:string):void
+/+obtFormaDePago():FormaDePago[*]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>570</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Mayorista
+--
+-lineaDeCredito:double
+--
++estLineaDeCredito(d:double):void
++obtLineaDeCredito():double
++obtFormaDePago():FormaDePago[*]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>570</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Minorista
+--
+
+--
++obtFormaDePago():FormaDePago[*]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>470</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>470</y>
+      <w>60</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>100</y>
+      <w>280</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>Acceso
+--
+-fechaHoraInicio:date
+-fechaHoraFin:date
+-ip:string
+--
++obtFechaHoraInicio():date
++obtFechaHoraFin():date
++obtIp():string
++obtCliente():Cliente
++estFechaHoraInicio(fechaHora:date):void
++estFechaHoraFin(fechaHora:date):void
++estIp(ip:string):void
++estCliente(cliente:Cliente):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>150</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>140</y>
+      <w>220</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>FormaDePago
+--
+-nombre:string
+-tasa:int
+-plazo:int
+--
++estNombre(nombre:string):void
++estTasa(tasa:int):void
++estPlazo(plazo:int):void
++obtNombre():string
++obtTasa():int
++obtPlazo():int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>220</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+</diagram>
