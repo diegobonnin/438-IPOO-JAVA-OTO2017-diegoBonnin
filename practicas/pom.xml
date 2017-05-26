@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.diegobonnin.ipoo</groupId>
+  <artifactId>practicas</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+    <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.3</version>
+  			<configuration>
+  				<!--  version del codigo fuente en que escribo el programa -->
+  				<source>1.8</source>
+  				<!--  version del codigo fuente en que se va a ejecutar el programa -->
+  				<target>1.8</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+</project>
