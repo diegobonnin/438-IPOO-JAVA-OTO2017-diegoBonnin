@@ -43,10 +43,14 @@ public class PracticaArrays {
 		// tope
 		int valorMaximo=10;
 		
+		System.out.println("(Antes de asignar) Cuantos elementos tiene: " + listaDeEnteros.size());
+		
 		for(int indice=0; indice<valorMaximo ; indice++){
 			valor++;
 			listaDeEnteros.add(valor);
 		}
+		
+		System.out.println("(Despues de asignar) Cuantos elementos tiene: " + listaDeEnteros.size());
 		
 		for(Integer i: listaDeEnteros){
 			System.out.println(i);
@@ -66,6 +70,12 @@ public class PracticaArrays {
 		for(Integer i: listaDeEnteros){
 			System.out.println(i);
 		}
+		
+		System.out.println("(Despues de quitar) Cuantos elementos tiene: " + listaDeEnteros.size());
+		
+		listaDeEnteros.clear();
+		
+		System.out.println("Cuantos elementos tiene: " + listaDeEnteros.size());
 	}
 	
 	
