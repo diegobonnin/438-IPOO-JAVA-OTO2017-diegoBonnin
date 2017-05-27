@@ -29,5 +29,16 @@ public class Calculadora {
 		cociente=dividendo / divisor;
 		return cociente;
 	}
+	
+	public static void main(String[] args){
+		Calculadora c=new Calculadora();
+		int a=4;
+		int b=2;
+		System.out.println("Suma: " + c.sumar(a, b));
+		System.out.println("Resta: " + c.restar(a, b));
+		System.out.println("Mult.: " + c.multiplicar(a, b));
+		System.out.println("Div.: " + c.dividir(a, b));
+		
+	}
 
 }
