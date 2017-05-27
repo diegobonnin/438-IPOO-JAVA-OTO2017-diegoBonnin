@@ -1,15 +1,21 @@
 package com.diegobonnin.ipoo.practicas27052017;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PracticaArrays {
 	
 	private int[] arrayDeEnteros;
+	private List<Integer> listaDeEnteros;
 	
 	public PracticaArrays(){
-		arrayDeEnteros=new int[30];
+		arrayDeEnteros=new int[10];
+		listaDeEnteros=new ArrayList<Integer>();
 	}
 	
 	private void test() {
-		int valor=20;
+		
+		int valor=0;
 		
 		// la primera posición es: arrayDeEnteros[0], no 1
 		
@@ -28,12 +34,45 @@ public class PracticaArrays {
 		+ arrayDeEnteros[indice]);
 		}
 		
+		
+	}
+	
+	public void testList(){
+		
+		int valor=0;
+		// tope
+		int valorMaximo=10;
+		
+		for(int indice=0; indice<valorMaximo ; indice++){
+			valor++;
+			listaDeEnteros.add(valor);
+		}
+		
+		for(Integer i: listaDeEnteros){
+			System.out.println(i);
+		}
+		
+		// Quita por indice
+		listaDeEnteros.remove(0);
+		
+		// Quita por instancia
+		// Primero obtiene el elemento
+		Integer elemento=listaDeEnteros.get(2);
+		// y despues quita elemento
+		listaDeEnteros.remove(elemento);
+		
+		System.out.println("************");
+		
+		for(Integer i: listaDeEnteros){
+			System.out.println(i);
+		}
 	}
 	
 	
 	public static void main(String[] args){
 		PracticaArrays pa=new PracticaArrays();
-		pa.test();
+		// pa.test();
+		pa.testList();
 	}
 
 
