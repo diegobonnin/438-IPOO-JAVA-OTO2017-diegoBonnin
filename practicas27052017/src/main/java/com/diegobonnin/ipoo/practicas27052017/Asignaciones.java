@@ -98,6 +98,7 @@ public class Asignaciones {
 			e.printStackTrace();
 		}
 		
+		
 		_date=new Date();
 		imp("_date", _date + "");
 		
@@ -109,6 +110,18 @@ public class Asignaciones {
 		
 		imp("_date", sdf2.format(_date));
 		
+		// Literal de enteros, el 1 en la asignación de abajo
+		int a=1;
+		// Literal de string
+		String s="Este es un literal de string";
+		// Literal booleano, el tru de abajo
+		boolean b=true;
+		// Literal de numeros con decimales, float, el "1.0f" de abajo
+		float f=1.0f;
+		// Literal de numeros con decimales, double, el "1.0d" de abajo
+		double d=1.0d;
+		// Literal de char, el 'B' de abajo; 
+		char c='B';
 		
 	}
 	
