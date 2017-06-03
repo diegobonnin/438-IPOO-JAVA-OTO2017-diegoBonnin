@@ -1,10 +1,17 @@
 package com.diegobonnin.ipoo.practicas27052017;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 public class Persona {
 	
 	private int id;
 	private String nombre;
 	private String nroDocumento;
+	
+	public Persona(){
+		
+	}
 	
 	public Persona(int id, String nombre, String nroDocumento) {
 		super();
