@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 
 public class TestHttp {
@@ -27,13 +28,18 @@ public class TestHttp {
 		StringBuilder sb = new StringBuilder();
 	
 		try {
+			
+			String userCredentials = "Bearer conseguir token en spotify";
 	
 			con = (HttpURLConnection) new URL(url).openConnection();
+			
+			con.setRequestProperty ("Authorization", userCredentials);
 	
 			con.setConnectTimeout(30000);
 			con.setReadTimeout(120000);
 	
 			con.setRequestProperty("Content-Type", contentType);
+			con.setRequestProperty("Accept", contentType);
 			
 			if(parametros!=null){
 	
@@ -69,7 +75,7 @@ public class TestHttp {
 		
 		String fecha=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		
-		String s=t.ejecutar("http://api.fixer.io/" + fecha, null);
+		String s=t.ejecutar("https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj" , null);
 		System.out.println(s);
 	}
 
