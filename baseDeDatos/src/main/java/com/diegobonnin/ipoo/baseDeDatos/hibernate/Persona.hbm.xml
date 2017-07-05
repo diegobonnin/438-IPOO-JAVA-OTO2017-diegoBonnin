@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.diegobonnin.ipoo.baseDeDatos.hibernate">
+
+    <class name="Persona" table="personas">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="lugarDeNacimiento" type="string" column="lugar_de_nacimiento"/>
+        <property name="fechaDeNacimiento" type="date" column="fecha_de_nacimiento"/>
+        <property name="nacionalidad" type="string" column="nacionalidad"/>
+        <property name="tipoDoc" type="string" column="tipo_doc"/>
+        <property name="nroDoc" type="string" column="nro_doc"/>
+        <property name="direccionParticular" type="string" column="direccion_particular"/>
+        <property name="telefono" type="string" column="telefono"/>
+        <property name="nombre" type="string" column="nombre"/>
+    </class>
+
+</hibernate-mapping>

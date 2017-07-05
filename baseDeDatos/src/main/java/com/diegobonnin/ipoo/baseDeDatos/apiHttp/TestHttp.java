@@ -29,11 +29,11 @@ public class TestHttp {
 	
 		try {
 			
-			String userCredentials = "Bearer conseguir token en spotify";
+			String userCredentials = "Bearer ";
 	
 			con = (HttpURLConnection) new URL(url).openConnection();
 			
-			con.setRequestProperty ("Authorization", userCredentials);
+			// con.setRequestProperty ("Authorization", userCredentials);
 	
 			con.setConnectTimeout(30000);
 			con.setReadTimeout(120000);
@@ -50,6 +50,8 @@ public class TestHttp {
 				w.close();
 				
 			}
+			
+			System.out.println("status: " + con.getResponseCode());
 	
 			r = new InputStreamReader(con.getInputStream());
 	
@@ -75,7 +77,7 @@ public class TestHttp {
 		
 		String fecha=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		
-		String s=t.ejecutar("https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj" , null);
+		String s=t.ejecutar("https://www.uaa.edu.py" , null);
 		System.out.println(s);
 	}
 
